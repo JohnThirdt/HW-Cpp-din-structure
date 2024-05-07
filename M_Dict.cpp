@@ -54,18 +54,18 @@ public:
 			cout << "Словарь переполнен" << endl;
 		}
 	}
-	Data_Node* Find(const string& field_find) // Найти указатель на узел
+	Data_Node* Find(const string& field) // Найти указатель на узел
 	{
 		for (int i = 0; i < size; i++) {
-			if (keys[i].field == field_find) {
+			if (keys[i].field == field) {
 				return keys[i].ptr;
 			}
 		}
 		return nullptr;
 	}
-	string getValue(const string& field_find) // Получить значение по ключу
+	string getValue(const string& field) // Получить значение по ключу
 	{
-		Data_Node* f_k = Find(field_find);
+		Data_Node* f_k = Find(field);
 		if (f_k == nullptr) {
 			return "Not found";
 			}
